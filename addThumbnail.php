@@ -6,6 +6,7 @@
             $dom = new DOMDocument();
             $dom->load( $value);
             foreach ($dom->getElementsByTagName('item') as $node) { 
+                print_r($node);
                 foreach ($node->getElementsByTagName('postmeta') as $oMeta) {
                     if($oMeta->getElementsByTagName("meta_key")->item(0)->nodeValue == "_thumbnail_id"){
                         $sNodeId = $oMeta->getElementsByTagName("meta_value")->item(0)->nodeValue;
